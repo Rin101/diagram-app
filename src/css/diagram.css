@@ -1,0 +1,92 @@
+:root {
+  --noteBoxHeight: 23px;
+  --noteBoxWidth: 38px;
+  --extendFirstFretWidth: 10px;
+  --noteRadius: 15px;
+  --rootRed: rgb(190, 77, 105);
+}
+
+.diagram {
+  /* border: solid 2px #919191; */
+  padding: 10px;
+}
+
+.string-container {
+  position: relative;
+  display: flex;
+}
+
+.string {
+  position: absolute;
+  height: 1px;
+  background: rgb(49, 49, 49);
+  width: calc(23 * var(--noteBoxWidth) + var(--extendFirstFretWidth));
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.note-box {
+  height: var(--noteBoxHeight);
+  width: var(--noteBoxWidth);
+  position: relative;
+}
+
+.note-box:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.note-right-border {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: var(--noteBoxHeight);
+  width: 0.5px;
+  background: rgb(49, 49, 49);
+  z-index: 1;
+}
+
+.note-left-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: var(--noteBoxHeight);
+  width: 0.5px;
+  background: rgb(49, 49, 49);
+  z-index: 1;
+}
+
+.note {
+  height: var(--noteRadius);
+  width: var(--noteRadius);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.note-normal {
+  background-color: rgb(41, 29, 29);
+}
+
+.note-root {
+  background-color: var(--rootRed);
+}
+
+.note-none {
+  display: none;
+}
+
+/* ================================= */
+.fret-numbers {
+  position: relative;
+  margin-top: 8px;
+}
+
+.fretNum {
+  position: absolute;
+  transform: translateX(-50%);
+}
